@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import App from './App.vue';
-// import VueRouter from 'vue-router';
+import cadastrarCandidato from './components/cadastrarCandidato.vue'
+import VueRouter from 'vue-router';
 
 // Vue.use(VueRouter)
-// import cadastrarCandidato from './components/cadastrarCandidato.vue'
 
 // Vue.use(VueRouter)
 
@@ -15,9 +15,15 @@ import App from './App.vue';
 //   }
 // })
 
+const router = new VueRouter({
+  routes: [
+    { path: '/', component: cadastrarCandidato }
+  ],
+});
+
 Vue.config.productionTip = false
 
 new Vue({
-  // router,
+  router,
   render: h => h(App),
 }).$mount('#app')
